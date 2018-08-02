@@ -4,7 +4,6 @@ public class Platform : MonoBehaviour
 {
     #region Fields
     internal bool isUseless = false;
-    internal bool isEnabledStopZone = true;
     internal Unit player;
     internal StickTransformation script;
 
@@ -40,11 +39,11 @@ public class Platform : MonoBehaviour
     {
         get
         {
-            return isEnabledStopZone;
+            return soptZone.enabled;
         }
         set
         {
-            isEnabledStopZone = value;
+            soptZone.enabled = value;
         }
     }
     #endregion
@@ -53,10 +52,6 @@ public class Platform : MonoBehaviour
     #region Unity lifecycle
     void Start()
     {
-        if (!isEnabledStopZone)
-        {
-            soptZone.enabled = false;
-        }
         player = GameObject.FindWithTag("Player").GetComponent<Unit>();
         script = stick.GetComponent<StickTransformation>();
     }
@@ -64,7 +59,7 @@ public class Platform : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (flore.isTouchedWithHead || isEnabledStopZone)
+        if (flore.isTouchedWithHead)
         {
             soptZone.enabled = true;
         }

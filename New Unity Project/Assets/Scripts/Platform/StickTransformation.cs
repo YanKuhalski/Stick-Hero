@@ -8,9 +8,9 @@ public class StickTransformation : MonoBehaviour
     #region Fields
     internal const float LENTH_GROW_SPEED = 0.1f;
     internal const int TURN_SPEED = 5;
-    internal const int MAX_LENTH = 6;
+    internal const int MAX_LENTH = 5;
 
-
+    
     internal int turnDeg;
     internal float stickLenth;
     internal int finalTurnDeg = 90;
