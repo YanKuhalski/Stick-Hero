@@ -4,6 +4,7 @@ public class Flore : MonoBehaviour
 {
     #region Fields
     internal bool heIsHere = false;
+    internal bool isTouchedWithHead = false;
     #endregion
 
 
@@ -28,6 +29,10 @@ public class Flore : MonoBehaviour
         if (other.tag == "Player")
         {
             heIsHere = true;
+        }
+        if (other.name == "Stick Head")
+        {
+            isTouchedWithHead = true;
         }
     }
     #endregion

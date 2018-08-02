@@ -1,4 +1,4 @@
-﻿ using UnityEngine;
+﻿using UnityEngine;
 
 public class DieTerritory : MonoBehaviour
 {
@@ -20,7 +20,7 @@ public class DieTerritory : MonoBehaviour
 
     void Update()
     {
-        dieTerritoryTransform.position = new Vector3(player.transform.position.x, -3, 0); ;
+        dieTerritoryTransform.position = new Vector3(player.transform.position.x, -4, 0); ;
     }
     #endregion
 }

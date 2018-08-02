@@ -4,7 +4,8 @@ public class Platform : MonoBehaviour
 {
     #region Fields
     internal bool isUseless = false;
-    internal GameObject player;
+    internal bool isEnabledStopZone = true;
+    internal Unit player;
     internal StickTransformation script;
 
 
@@ -14,6 +15,10 @@ public class Platform : MonoBehaviour
     private GameObject stick;
     [SerializeField]
     private SpriteRenderer redBlock;
+    [SerializeField]
+    private BoxCollider2D soptZone;
+    [SerializeField]
+    private BoxCollider2D stickCollider;
     #endregion
 
 
@@ -29,32 +34,53 @@ public class Platform : MonoBehaviour
             isUseless = value;
         }
     }
+
+
+    public bool IsEnabledStopZone
+    {
+        get
+        {
+            return isEnabledStopZone;
+        }
+        set
+        {
+            isEnabledStopZone = value;
+        }
+    }
     #endregion
 
 
     #region Unity lifecycle
     void Start()
     {
-        player = GameObject.FindWithTag("Player");
+        if (!isEnabledStopZone)
+        {
+            soptZone.enabled = false;
+        }
+        player = GameObject.FindWithTag("Player").GetComponent<Unit>();
         script = stick.GetComponent<StickTransformation>();
     }
 
 
     void FixedUpdate()
     {
-
+        if (flore.isTouchedWithHead || isEnabledStopZone)
+        {
+            soptZone.enabled = true;
+        }
         if (transform.position.x > 0.5f)
         {
             redBlock.enabled = true;
         }
-        if (!player.GetComponent<Unit>().HasPermissionToMove && flore.IsHeHere)
+        if (!player.HasPermissionToMove && flore.IsHeHere)
         {
+            stickCollider.enabled = true;
             script.enabled = true;
             redBlock.enabled = false;
         }
         if (!script.isOnPlase)
         {
-            player.GetComponent<Unit>().HasPermissionToMove = true;
+            player.HasPermissionToMove = true;
             enabled = false;
             IsUseless = true;
         }

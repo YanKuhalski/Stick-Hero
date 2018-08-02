@@ -9,20 +9,20 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1922607202084640}
+  m_RootGameObject: {fileID: 1427938750772480}
   m_IsPrefabAsset: 1
---- !u!1 &1922607202084640
+--- !u!1 &1427938750772480
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4001256221033858}
-  - component: {fileID: 114157434543458374}
-  - component: {fileID: 114831585289350930}
-  - component: {fileID: 114284274451841036}
-  - component: {fileID: 114644940633929504}
+  - component: {fileID: 4944559879602240}
+  - component: {fileID: 114695486270985068}
+  - component: {fileID: 114603996558112036}
+  - component: {fileID: 114080691292779480}
+  - component: {fileID: 114412282429833860}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Game manager
@@ -30,12 +30,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4001256221033858
+--- !u!4 &4944559879602240
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1922607202084640}
+  m_GameObject: {fileID: 1427938750772480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.260031, y: -2.1593928, z: 0.036781922}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -43,26 +43,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114157434543458374
+--- !u!114 &114080691292779480
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1922607202084640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c17314387767bfe46a3ca9a6bb190c27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreCounter: {fileID: 0}
-  bestScores: {fileID: 0}
-  finalScores: {fileID: 0}
---- !u!114 &114284274451841036
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1922607202084640}
+  m_GameObject: {fileID: 1427938750772480}
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe136ed117f43da46b8fb31223f3b00c, type: 3}
@@ -70,12 +56,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platforms:
   - {fileID: 0}
---- !u!114 &114644940633929504
+  player: {fileID: 0}
+--- !u!114 &114412282429833860
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1922607202084640}
+  m_GameObject: {fileID: 1427938750772480}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95951a407cec10b4d9d8cf9fb40ddaeb, type: 3}
@@ -86,12 +73,12 @@ MonoBehaviour:
   playerDeath: {fileID: 0}
   stickHead: {fileID: 0}
   soundButton: {fileID: 0}
---- !u!114 &114831585289350930
+--- !u!114 &114603996558112036
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1922607202084640}
+  m_GameObject: {fileID: 1427938750772480}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7bd213b03161a54c8edfdc530de274d, type: 3}
@@ -103,3 +90,17 @@ MonoBehaviour:
   restartButtonIm: {fileID: 0}
   restartButtonCollider: {fileID: 0}
   restartButton: {fileID: 0}
+--- !u!114 &114695486270985068
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1427938750772480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17314387767bfe46a3ca9a6bb190c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreCounter: {fileID: 0}
+  bestScores: {fileID: 0}
+  finalScores: {fileID: 0}

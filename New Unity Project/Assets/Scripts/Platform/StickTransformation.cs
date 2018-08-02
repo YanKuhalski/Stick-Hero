@@ -6,13 +6,14 @@ using UnityEngine.UI;
 public class StickTransformation : MonoBehaviour
 {
     #region Fields
-    internal const int MAX_TURN_DEG = 180;
     internal const float LENTH_GROW_SPEED = 0.1f;
     internal const int TURN_SPEED = 5;
     internal const int MAX_LENTH = 6;
 
+
     internal int turnDeg;
     internal float stickLenth;
+    internal int finalTurnDeg = 90;
     internal bool isContinuesToTurn = true;
     internal bool transformationWasStoped = false;
     internal bool transformationWasStarted = false;
@@ -46,7 +47,6 @@ public class StickTransformation : MonoBehaviour
     {
         stickTransform = GetComponent<Transform>();
         sound = GetComponent<AudioSource>();
-
     }
 
 
@@ -96,16 +96,21 @@ public class StickTransformation : MonoBehaviour
     #region Private methods
     private void StartRotation()
     {
-        if (!(stickHead.IsOnFloor) && turnDeg < MAX_TURN_DEG)
+        if (turnDeg < finalTurnDeg)
         {
             turnDeg += TURN_SPEED;
             stickTransform.rotation = Quaternion.Euler(0, 0, -turnDeg);
         }
         else
         {
-            if (isContinuesToTurn)
+            isContinuesToTurn = false;
+            if (!stickHead.IsOnFloor)
             {
-                isContinuesToTurn = false;
+                if (stickHead.IsTouchedByPlayer)
+                {
+                    finalTurnDeg = 180;
+                    GetComponent<BoxCollider2D>().enabled = false;
+                }
             }
         }
     }

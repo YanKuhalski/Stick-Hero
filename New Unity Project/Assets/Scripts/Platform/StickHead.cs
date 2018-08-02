@@ -6,6 +6,7 @@ public class StickHead : MonoBehaviour
 {
     #region Fields
     internal bool isOnFloor = false;
+    internal bool isTouchedByPlayer = false;
     internal AudioSource audioSource;
 
 
@@ -24,6 +25,19 @@ public class StickHead : MonoBehaviour
         get
         {
             return isOnFloor;
+        }
+    }
+
+
+    public bool IsTouchedByPlayer
+    {
+        set
+        {
+            isTouchedByPlayer = value;
+        }
+        get
+        {
+            return isTouchedByPlayer;
         }
     }
     #endregion
@@ -50,6 +64,10 @@ public class StickHead : MonoBehaviour
             {
                 audioSource.Play();
             }
+        }
+        if (other.tag == "Player")
+        {
+            IsTouchedByPlayer = true;
         }
     }
     #endregion

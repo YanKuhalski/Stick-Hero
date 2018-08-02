@@ -16,6 +16,8 @@ public class BlockManager : MonoBehaviour
 
     [SerializeField]
     private List<GameObject> platforms;
+    [SerializeField]
+    private Unit player;
     #endregion
 
 
@@ -48,7 +50,10 @@ public class BlockManager : MonoBehaviour
         }
         if (platforms.Count < 2 && !IsEndOfRound)
         {
-            SpawnNewPlatform();
+            if (!player.HasPermissionToMove)
+            {
+                SpawnNewPlatform();
+            }
         }
         if (IsEndOfRound)
         {
@@ -86,6 +91,7 @@ public class BlockManager : MonoBehaviour
             + Random.Range(MIN_X_POSITION_SHIFT, MAX_X_POSITION_SHIFT);
         GameObject _newPlatform = Instantiate(platforms[0], new Vector3(_xPositionShift, Y_POSITION, 0), Quaternion.identity);
         _newPlatform.transform.rotation = Quaternion.Euler(0, Random.Range(0f, 68f), 0);
+        _newPlatform.GetComponent<Platform>().IsEnabledStopZone = false;
         platforms.Add(_newPlatform);
     }
 
@@ -101,6 +107,7 @@ public class BlockManager : MonoBehaviour
         else
         {
             GameObject _newPlatform = Instantiate(platforms[0], new Vector3(0, Y_POSITION, 0), Quaternion.identity);
+            _newPlatform.GetComponent<Platform>().IsEnabledStopZone = true;
             platforms.Add(_newPlatform);
             _removablePlatform = platforms[0];
             platforms.Remove(_removablePlatform);

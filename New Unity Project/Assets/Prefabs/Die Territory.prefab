@@ -9,18 +9,18 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1530020405329664}
+  m_RootGameObject: {fileID: 1085154633053874}
   m_IsPrefabAsset: 1
---- !u!1 &1530020405329664
+--- !u!1 &1085154633053874
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4784221776929776}
-  - component: {fileID: 61515105846562282}
-  - component: {fileID: 114609988482977848}
+  - component: {fileID: 4212881048135994}
+  - component: {fileID: 61918700463181706}
+  - component: {fileID: 114525564734455604}
   m_Layer: 0
   m_Name: Die Territory
   m_TagString: Untagged
@@ -28,25 +28,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4784221776929776
+--- !u!4 &4212881048135994
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1530020405329664}
+  m_GameObject: {fileID: 1085154633053874}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.39586824, y: -3, z: 0}
+  m_LocalPosition: {x: -0.39586824, y: -4, z: 0}
   m_LocalScale: {x: 7.09, y: 0.34, z: 0.05}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61515105846562282
+--- !u!61 &61918700463181706
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1530020405329664}
+  m_GameObject: {fileID: 1085154633053874}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -66,12 +66,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114609988482977848
+--- !u!114 &114525564734455604
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1530020405329664}
+  m_GameObject: {fileID: 1085154633053874}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18dd979f93b5e8245a8c76d34f1bbcd5, type: 3}
